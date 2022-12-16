@@ -1,0 +1,6 @@
+level_1_tag=csv,event_log=1,2019-08-29T01:53:12Z,Amex,Giovanna Van der Linde,Female,185.216.194.245,Industrial,Philippines,55
+level_1_tag=json,event_log=a:1 b:2 c:3
+level_1_tag=filter_1,event_log=level_1x_tag=filter_11,event_log=(kv=)a=1,b=2,c=3,d=4,e=5
+level_1_tag=filter_1,event_log=level_1x_tag=filter_11,event_log=(json){"Property 1":"value x","Property 2":"value y"}
+level_1_tag=filter_1,event_log=level_1x_tag=filter_11,event_log=(kv|)a|1,b|2,c|3,d|4,e|5
+level_1_tag=filter_1,event_log=level_1x_tag=filter_11,event_log=(kv%)a%1,b%2,c%3,d%4,e%5

@@ -1,0 +1,19 @@
+[
+  {
+    "description": "Get: level_2_tag/event_log, set: event_filter_tag/message",
+    "type": "plugin",
+    "name": "ruby",
+    "options": {
+      "path": "${config_dir}/code_2.rb"
+    }
+  },
+  {
+    "type": "filter",
+    "event_filter_tags_to_process": [
+      "filter_11"
+    ],
+    "set_event_filter_done_if_executed": true,
+    "filter_parts": "${config_dir}/filter_11.json"
+  }
+]
+

@@ -1,0 +1,58 @@
+[
+  {
+    "type": "plugin",
+    "name": "ruby",
+    "description": "Get: (json)|(kv=)|(kv==)|(kv%),set: event_filter_tag/message",
+    "options": {
+      "path": "${config_dir}/code_3.rb"
+    }
+  },
+  {
+    "type": "plugin",
+    "name": "kv",
+    "event_filter_tags_to_process": [
+      "(kv=)"
+    ],
+    "options": {
+      "field_split": ",",
+      "value_split": "="
+    },
+    "set_event_filter_done_if_executed": true
+  },
+  {
+    "type": "plugin",
+    "name": "json",
+    "event_filter_tags_to_process": [
+      "(json)"
+    ],
+    "options": {
+      "source": "message"
+    },
+    "set_event_filter_done_if_executed": true
+  },
+  {
+    "type": "plugin",
+    "name": "kv",
+    "event_filter_tags_to_process": [
+      "(kv|)"
+    ],
+    "options": {
+      "field_split": ",",
+      "value_split": "|"
+    },
+    "set_event_filter_done_if_executed": true
+  },
+  {
+    "type": "plugin",
+    "name": "kv",
+    "event_filter_tags_to_process": [
+      "(kv%)"
+    ],
+    "options": {
+      "field_split": ",",
+      "value_split": "%"
+    },
+    "set_event_filter_done_if_executed": true
+  }
+]
+

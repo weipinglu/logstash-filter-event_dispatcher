@@ -1,0 +1,51 @@
+[
+  {
+    "type": "plugin",
+    "name": "ruby",
+    "description": "Get: level_1_tag/event_log, set: event_filter_tag/message",
+    "options": {
+      "path": "${config_dir}/code_1.rb"
+    }
+  },
+  {
+    "type": "plugin",
+    "name": "csv",
+    "event_filter_tags_to_process": [
+      "csv"
+    ],
+    "options": {
+      "columns": [
+        "id",
+        "timestamp",
+        "paymentType",
+        "name",
+        "gender",
+        "ip_address",
+        "purpose",
+        "country",
+        "age"
+      ]
+    },
+    "set_event_filter_done_if_executed": true
+  },
+  {
+    "type": "plugin",
+    "name": "kv",
+    "event_filter_tags_to_process": [
+      "kv"
+    ],
+    "options": {
+      "field_split": " ",
+      "value_split": ":"
+    },
+    "set_event_filter_done_if_executed": true
+  },
+  {
+    "type": "filter",
+    "event_filter_tags_to_process": [
+      "filter_1"
+    ],
+    "set_event_filter_done_if_executed": true,
+    "filter_parts": "${config_dir}/filter_1.json"
+  }
+]

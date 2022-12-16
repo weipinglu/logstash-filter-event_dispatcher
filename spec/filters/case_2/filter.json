@@ -1,0 +1,32 @@
+[
+  {
+    "type": "plugin",
+    "name": "ruby",
+    "options": {
+      "code": "tag = event.get('message').strip.start_with?('\u007B') ? 'json_logs' : 'csv_logs'; event.set('event_filter_tag', tag)"
+    }
+  },
+  {
+    "type": "plugin",
+    "require_path": "logstash/filters/csv",
+    "name": "csv",
+    "options": {
+      "columns": ["id", "timestamp", "paymentType", "name", "gender", "ip_address", "purpose", "country", "age"]
+    },
+    "event_filter_tags_to_process": [
+      "csv_logs"
+    ],
+    "set_event_filter_done_if_executed": true
+  },
+  {
+    "type": "plugin",
+    "name": "json",
+    "options": {
+      "source": "message"
+    },
+    "event_filter_tags_to_process": [
+      "json_logs"
+    ],
+    "set_event_filter_done_if_executed": true
+  }
+]
